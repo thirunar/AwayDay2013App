@@ -2,6 +2,7 @@ package com.javacodegeeks.android.awayspeakers;
 
 import android.app.ExpandableListActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.widget.ExpandableListView;
@@ -33,6 +34,9 @@ public class MainActivity extends ExpandableListActivity{
 		adapter.setInflater((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE), this);
 		expandableList.setAdapter(adapter);
 		expandableList.setOnChildClickListener(this);
+
+        Intent intent = new Intent(MainActivity.this, SimpleVideoPlayerActivity.class);
+        startActivity(intent);
 	}
 
 	public void setGroupParents() {
